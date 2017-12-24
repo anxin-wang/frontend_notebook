@@ -1,0 +1,39 @@
+<!--
+Error¶ÔÏó
+1.Error¶ÔÏóÓÐÁ½¸öÌØÐÔ£ºnameºÍmessage
+2.Error¶ÔÏóµÄmessageÌØÐÔÊÇä¯ÀÀÆ÷Éú³ÉµÄÓÃÓÚ±íÊ¾´íÎóÐÔÖÊµÄÐÅÏ¢£¬ÒòÎªÕâ¸öÌØÐÔÊÇÌØ¶¨ÓÚä¯ÀÀÆ÷µÄ£¬
+Í¬ÑùµÄ´íÎóÔÚ²»Í¬µÄä¯ÀÀÆ÷ÉÏ¿É²úÉú²»Í¬µÄ´íÎóÐÅÏ¢¡£
+3.ÅÐ¶Ï´íÎóÀàÐÍ£¬µÚÒ»ÖÖ£ºoException.name="SystaxError";µÚ¶þÖÖ£ºoException instanceof SystaxError
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Untitled Document</title>
+		<script charset="ISO-8859-1" type="text/javascript">
+			function test()
+			{
+				try{
+/*
+					if(){
+						throw new Error("message");
+					}
+					*/
+				}catch(oException){
+					if(oException.name="SystaxError")  //ä¯ÀÀÆ÷Éú³ÉµÄ´íÎó¶ÔÏó,Ò»°ã²»»áÉú³ÉError¶ÔÏó£¬¶øÉú³É¾ßÌåError¶ÔÏó
+					{
+						alert("Syntax Error:"+oException.message);
+					}else if(oException.name="Error"){  //¿ª·¢ÈËÔ±¶¨ÒåµÄ´íÎó¶ÔÏó
+						alert(oException.message);
+					}
+					
+				}finally{
+					
+				}
+			}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

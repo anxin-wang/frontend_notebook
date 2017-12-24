@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/traditional.dtd">
+<html>
+	<head>
+		
+		<title>Untitled Document</title>
+		<script type="text/javascript" charset="UTF-8">
+			function divide(iNum1,iNum2)
+			{
+				assert(arguments.length==2,"divide()函数需要两个参数");
+				assert(typeof iNum1=="number" && typeof iNum2=="number","divide()函数需要两个Number类型的函数");
+				var answer=iNum1.valueOf()/iNum2.valueOf();
+				alert(answer);
+			}
+			function assert(Condition,ErrorMessage){
+				if(!Condition){
+					throw new Error(ErrorMessage);
+				}
+			}
+			function test()
+			{
+
+				try{
+					//divide("a","b");
+					//divide(2);
+					divide(6,2);
+				}catch(oException){
+					alert(oException.message);
+				}
+				
+
+				//alert("测试");
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" onclick="test()" value="点击">
+	</body>
+</html>
